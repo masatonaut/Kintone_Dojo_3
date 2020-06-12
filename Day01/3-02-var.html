@@ -80,20 +80,16 @@ footer .container {
 </footer>
 <script>
   var answer = window.prompt('好きな食べ物は?');
-  if (answer === 'ラーメン') {
-
-  } else if (answer === 'ハンバーグ') {
-
-  } else {
-
-  }
-// ちょっと楽しみ
-
-ラーメン：コンソールに「天下一品？」と表示
-ハンバーグ：アラートで「さわやかでしょ！』と表示
-プリン：コンファームで「手作りしますか？」
-その他：入力されたテキストをコンソールに表示
-
+    if (answer === 'ラーメン'){
+      console.log('天下一品？');
+    } else if (answer === 'ハンバーグ'){
+      window.alert('さわやかでしょ！');
+    } else if (answer === 'プリン'){
+      window.confirm('手作りしますか？');
+    } else {
+      console.log(answer);
+    }
+    
 </script>
 </body>
 </html>
