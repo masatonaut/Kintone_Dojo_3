@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>ファイル管理</title>
+<style>
+h1 {
+    border:solid 3px #4169E1;
+    padding:3px;
+    color:#190707;
+    width:250px;
+}
+table {
+    border-collapse: collapse;
+}
+td {
+    padding: 4px 8px;
+    border: 1px solid #23628f;
+}
+tr#allFile {
+    background:#AFEEEE;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>ファイル管理一覧</h1>
+<h2>全てのフォルダとアクセス権を表示</h2>
+</div>
+</header>
+<div class="main-wrapper">
+<section>
+    <table>
+        <tr id="allFile">
+            <td>フォルダ名</td>
+            <td>閲覧権限</td>
+            <td>編集権限</td>
+            <td>削除権限</td>
+        </tr>
+        <tr>
+            <td id="folderName1"></td>
+            <td id="viewAuth1"></td>
+            <td id="editAuth1"></td>
+            <td id="deleteAuth1"></td>
+        </tr>
+        <tr>
+            <td id="folderName2"></td>
+            <td id="viewAuth2"></td>
+            <td id="editAuth2"></td>
+            <td id="deleteAuth2"></td>
+        </tr>
+        <tr>
+            <td id="folderName3"></td>
+            <td id="viewAuth3"></td>
+            <td id="editAuth3"></td>
+            <td id="deleteAuth3"></td>
+        </tr>
+        <tr>
+            <td id="folderName4"></td>
+            <td id="viewAuth4"></td>
+            <td id="editAuth4"></td>
+            <td id="deleteAuth4"></td>
+        </tr>
+        <tr>
+            <td id="folderName5"></td>
+            <td id="viewAuth5"></td>
+            <td id="editAuth5"></td>
+            <td id="deleteAuth5"></td>
+        </tr>
+        <tr>
+            <td id="folderName6"></td>
+            <td id="viewAuth6"></td>
+            <td id="editAuth6"></td>
+            <td id="deleteAuth6"></td>
+        </tr>
+        <tr>
+            <td id="folderName7"></td>
+            <td id="viewAuth7"></td>
+            <td id="editAuth7"></td>
+            <td id="deleteAuth7"></td>
+        </tr>
+    </table>
+</section>
+</div>
+<script>
+
+  'use stricet';
+
+var fileManage= {
+    f001: {
+        deleteAuth:'情報システム部',
+        editAuth:'情報システム部',
+        folderName:'情報システム部',
+        viewAuth:'情報システム部'
+        },
+    
+    f002: {
+        deleteAuth:'経営管理部',
+        editAuth:'経営管理部',
+        folderName:'経営管理部',
+        viewAuth:'経営管理部'
+        },
+    f003: {
+        deleteAuth:'営業部',
+        editAuth:'Everyone',
+        folderName:'営業部',
+        viewAuth:'営業部'
+        },
+    f004: {
+        deleteAuth:'開発本部',
+        editAuth:'開発本部',
+        folderName:'開発本部',
+        viewAuth:'開発本部'
+        },
+    f005: {
+        deleteAuth:'総務部',
+        editAuth:'Everyone',
+        folderName:'Everyone',
+        viewAuth:'総務部'
+        },
+    f006: {
+        deleteAuth:'経理部',
+        editAuth:'経理部',
+        folderName:'経理部',
+        viewAuth:'経理部'
+        },
+    f007: {
+        deleteAuth:'企画部',
+        editAuth:'Everyone',
+        folderName:'企画部',
+        viewAuth:'企画部'
+        },
+    };
+    
+  for (var i=0; i < 7; i++){
+    document.getElementById('folderName' + (i + 1)).innerHTML = fileManage['f00' + (i + 1)]['folderName'];
+    document.getElementById('viewAuth' + (i + 1)).innerHTML = fileManage['f00' + (i + 1)]['viewAuth'];
+    document.getElementById('editAuth' + (i + 1)).innerHTML = fileManage['f00' + (i + 1)]['editAuth'];
+    document.getElementById('deleteAuth' + (i + 1)).innerHTML = fileManage['f00' + (i + 1)]['deleteAuth'];
+  }
+
+// 『innerHTML』は全てのブラウザで実行することができますが、『textContent』は『Internet Explorer』では動きません。逆に『innerText』は『FireFox』
+</script>
+</body>
+</html>
