@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>ファイル管理</title>
+<style>
+h1 {
+  border:solid 3px #4169E1;
+  padding:3px;
+  color:#190707;
+  width:250px;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>ファイル管理一覧</h1>
+<h2>全てのフォルダとアクセス権を表示</h2>
+</div>
+</header>
+<script>
+  var fileManage= {
+  f001:Object= {
+    deleteAuth:'情報システム部',
+    editAuth:'情報システム部',
+    folderName:'情報システム部',
+    viewAuth:'情報システム部'
+  },
+  f002:Object= {
+    deleteAuth:'経営管理部',
+    editAuth:'経営管理部',
+    folderName:'経営管理部',
+    viewAuth:'経営管理部'
+  },
+  f003:Object= {
+    deleteAuth:'営業部',
+    editAuth:'Everyone',
+    folderName:'営業部',
+    viewAuth:'営業部'
+  },
+  f004:Object= {
+    deleteAuth:'開発本部',
+    editAuth:'開発本部',
+    folderName:'開発本部',
+    viewAuth:'開発本部'
+  },
+  f005:Object= {
+    deleteAuth:'総務部',
+    editAuth:'Everyone',
+    folderName:'Everyone',
+    viewAuth:'総務部'
+  },
+  f006:Object= {
+    deleteAuth:'経理部',
+    editAuth:'経理部',
+    folderName:'経理部',
+    viewAuth:'経理部'
+  },
+  f007:Object= {
+    deleteAuth:'企画部',
+    editAuth:'Everyone',
+    folderName:'企画部',
+    viewAuth:'企画部'
+  },
+};
+console.log(fileManage);
+</script>
+</body>
+</html>
