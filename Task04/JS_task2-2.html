@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<title>kintone の月額料金</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+h1 {
+    border:solid 3px #FFBF00;
+    padding:3px;
+    color:#190707;
+    width: 400px;
+}
+div.user {
+    font-size:14pt;
+    font-weight:bold;
+}
+form {
+    margin-left:20px;
+}
+button {
+    margin-right: 15px;
+}
+</style>
+</head>
+<body>
+    <h1>kintone のライセンス料</h1>
+    <div class="user">最低ユーザー数(ライトコース)での利用料金</div><br>
+    <form>
+        <input type="checkbox" id ="secure">セキュアオプション（1ユーザー あたり 250円） ×
+        <select id ="securevalue">
+            <option value="1">1名</option>
+            <option value="2">2名</option>
+            <option value="3">3名</option>
+            <option value="4">4名</option>
+            <option value="5">5名</option>
+        </select>
+        <br>
+        <input type="checkbox" id ="disk">ディスク増設（10GB あたり 1000円） ×
+        <select id = "diskvalue">
+            <option value="1">10GB</option>
+            <option value="2">20GB</option>
+            <option value="3">30GB</option>
+            <option value="4">40GB</option>
+            <option value="5">50GB</option>
+        </select>
+        <h4><button type="button" id="button">計算</button>月額金額：<span id="price">3900</span>円</h4>
+    </form>
+<script>
+'use srtict';
+
+var checkbox_status = document.querySelectorAll("input[type='checkbox']"); // → チェックボックスを全部取得
+
+
+secure.onclick = status;
+disk.onclick = status;
+
+document.querySelector('button').onclick = function status() {
+    var month_price = 3900;
+    var secure_check = checkbox_status[0].checked;
+    var disk_check = checkbox_status[1].checked;
+    var secure_value = document.getElementById('securevalue').value;
+    var disk_value = document.getElementById('diskvalue').value;
+        // console.log(secure_check);
+        // console.log(disk_check);
+    if (secure_check === true && disk_check === false) {
+		month_price += 250 * secure_value;
+	} else if (secure_check === false && disk_check === true) {
+		month_price += 1000 * disk_value;
+	} else if (secure_check === true && disk_check === true) {
+		month_price += 250 * secure_value + 1000 * disk_value;
+	} else {
+		month_price += 0;
+	}
+    
+    document.getElementById('price').textContent = month_price;
+};
+
+
+</script>
+</body>
+</html>
