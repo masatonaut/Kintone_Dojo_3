@@ -145,14 +145,14 @@ deleteAuth: '企画部'
 }
 };
 for (var i = 0; i < 7; i++) {
-  var folderName = fileManage['f00' + (i + 1)]['folderName'];
-    document.getElementById('folderName' + (i + 1)).innerHTML = folderName;
-  var viewAuth = fileManage['f00' + (i + 1)]['viewAuth'];
-    document.getElementById('viewAuth' + (i + 1)).innerHTML = viewAuth;
-  var editAuth = fileManage['f00' + (i + 1)]['editAuth'];
-    document.getElementById('editAuth' + (i + 1)).innerHTML = editAuth;
-  var deleteAuth = fileManage['f00' + (i + 1)]['deleteAuth'];
-    document.getElementById('deleteAuth' + (i + 1)).innerHTML = deleteAuth;
+  var folderName = fileManage['f00' + (i + 1)].folderName;
+    document.getElementById('folderName' + (i + 1)).textContent = folderName;
+  var viewAuth = fileManage['f00' + (i + 1)].viewAuth;
+    document.getElementById('viewAuth' + (i + 1)).textContent = viewAuth;
+  var editAuth = fileManage['f00' + (i + 1)].editAuth;
+    document.getElementById('editAuth' + (i + 1)).textContent = editAuth;
+  var deleteAuth = fileManage['f00' + (i + 1)].deleteAuth;
+    document.getElementById('deleteAuth' + (i + 1)).textContent = deleteAuth;
   if (viewAuth === 'Everyone') {
     var li = document.createElement('li');
     li.innerHTML = folderName;
