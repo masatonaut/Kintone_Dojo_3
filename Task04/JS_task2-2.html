@@ -47,14 +47,10 @@ button {
         <h4><button type="button" id="button">計算</button>月額金額：<span id="price">3900</span>円</h4>
     </form>
 <script>
-'use srtict';
-
+'use strict';
 var checkbox_status = document.querySelectorAll("input[type='checkbox']"); // → チェックボックスを全部取得
-
-
 secure.onclick = status;
 disk.onclick = status;
-
 document.querySelector('button').onclick = function status() {
     var month_price = 3900;
     var secure_check = checkbox_status[0].checked;
@@ -72,11 +68,8 @@ document.querySelector('button').onclick = function status() {
 	} else {
 		month_price += 0;
 	}
-    
     document.getElementById('price').textContent = month_price;
 };
-
-
 </script>
 </body>
 </html>
