@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<title>kintone の月額料金</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style type="text/css">
+h1 {
+    border:solid 3px #FFBF00;
+    padding:3px;
+    color:#190707;
+    width: 400px;
+}
+div.user {
+    font-size:14pt;
+    font-weight:bold;
+}
+form {
+    margin-left:20px;
+}
+
+</style>
+</head>
+<body>
+    <h1>kintone のライセンス料</h1>
+    <div class="user">最低ユーザー数(ライトコース)での利用料金</div>
+    <br>
+    <form>
+        <input type="checkbox" id="secure">セキュアオプション（1ユーザー あたり 250円）<br>
+        <input type="checkbox" id="disk">ディスク増設（10GB あたり 1000円）<br>
+        <h4>月額金額：<span id="price">3900</span>円</h4>
+    </form>
+<script>
+'use strict';
+var checkbox_status = document.querySelectorAll("input[type='checkbox']"); // → チェックボックスを全部取得
+secure.onclick = status;
+disk.onclick = status;
+function status() {
+var month_price = 3900;
+var secure_check = checkbox_status[0].checked;
+var disk_check = checkbox_status[1].checked;
+if (secure_check === true && disk_check === false) {
+    month_price += 250;
+} else if (secure_check === false && disk_check === true) {
+    month_price += 1000;
+} else if (secure_check === true && disk_check === true) {
+    month_price += 1250;
+} else {
+    month_price += 0;
+}
+document.getElementById('price').textContent = month_price;
+}
+</script>
+</body>
+</html>
